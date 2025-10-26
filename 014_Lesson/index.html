@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-us">
+  <head>
+    <!-- Start Google Search Engine Optimization -->
+    <title>Lesson 14 Bootstrap | Alerts In Bootstrap</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Enginner   Mohammed Nour Abdo" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1f2021" />
+    <meta http-equiv="refresh" content="" />
+    <!-- End Google Search Engine Optimization -->
+
+    <!-- Start Facebook Open Graph OG -->
+    <meta property="og:title" content="Lesson 5 Bootstrap | Button Bootstrap" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <!-- End Facebook Open Graph OG -->
+
+    <!-- Start Twitter Search Engine Optimization -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Lesson 5 Bootstrap | Button Bootstrap"
+    />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:site" content="@Fy87376Kl" />
+    <meta name="twitter:creator" content="@Fy87376Kl" />
+    <!-- End Twitter Search Engine Optimization -->
+
+    <!-- Start CSS File -->
+    <style>
+      body h1:first-of-type {
+        border-bottom: 4px solid rgb(255, 115, 0);
+        padding: 10px;
+        font-size: 25px;
+        text-align: center;
+      }
+    </style>
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <!-- End CSS File -->
+
+    <!-- Start Base Element -->
+    <base href="" />
+    <!-- End Base Element -->
+  </head>
+  <body>
+    <h1>Lesson 14 Bootstrap | Alerts In Bootstrap</h1>
+    <!-- Classes -->
+    <!--
+    alert, alert-primary, alert-secondary, alert-success, ...
+    alert-link, alert-heading
+    -->
+    <!-- Examples -->
+    <div class="alert alert-primary" role="alert">
+      A simple primary alert—check it out!
+    </div>
+    <div class="alert alert-secondary" role="alert">
+      A simple secondary alert—check it out!
+    </div>
+    <div class="alert alert-success" role="alert">
+      A simple success alert—check it out!
+    </div>
+    <div class="alert alert-danger" role="alert">
+      A simple danger alert—check it out!
+    </div>
+    <div class="alert alert-warning" role="alert">
+      A simple warning alert—check it out!
+    </div>
+    <div class="alert alert-info" role="alert">
+      A simple info alert—check it out!
+    </div>
+    <div class="alert alert-light" role="alert">
+      A simple light alert—check it out!
+    </div>
+    <div class="alert alert-dark" role="alert">
+      A simple dark alert—check it out!
+    </div>
+    <div id="liveAlertPlaceholder"></div>
+    <button type="button" class="btn btn-primary" id="liveAlertBtn">
+      Show live alert
+    </button>
+    <div class="alert alert-primary" role="alert">
+      A simple primary alert with
+      <a href="#" class="alert-link">an example link</a>. Give it a click if you
+      like.
+    </div>
+    <div class="alert alert-secondary" role="alert">
+      A simple secondary alert with
+      <a href="#" class="alert-link">an example link</a>. Give it a click if you
+      like.
+    </div>
+    <div class="alert alert-success" role="alert">
+      A simple success alert with
+      <a href="#" class="alert-link">an example link</a>. Give it a click if you
+      like.
+    </div>
+    <div class="alert alert-danger" role="alert">
+      A simple danger alert with
+      <a href="#" class="alert-link">an example link</a>. Give it a click if you
+      like.
+    </div>
+    <div class="alert alert-warning" role="alert">
+      A simple warning alert with
+      <a href="#" class="alert-link">an example link</a>. Give it a click if you
+      like.
+    </div>
+    <div class="alert alert-info" role="alert">
+      A simple info alert with
+      <a href="#" class="alert-link">an example link</a>. Give it a click if you
+      like.
+    </div>
+    <div class="alert alert-light" role="alert">
+      A simple light alert with
+      <a href="#" class="alert-link">an example link</a>. Give it a click if you
+      like.
+    </div>
+    <div class="alert alert-dark" role="alert">
+      A simple dark alert with
+      <a href="#" class="alert-link">an example link</a>. Give it a click if you
+      like.
+    </div>
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Well done!</h4>
+      <p>
+        Aww yeah, you successfully read this important alert message. This
+        example text is going to run a bit longer so that you can see how
+        spacing within an alert works with this kind of content.
+      </p>
+      <hr />
+      <p class="mb-0">
+        Whenever you need to, be sure to use margin utilities to keep things
+        nice and tidy.
+      </p>
+    </div>
+    ...
+    <!-- Start JavaScript File -->
+    <script>
+      const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
+      const appendAlert = (message, type) => {
+        const wrapper = document.createElement("div");
+        wrapper.innerHTML = [
+          `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+          `   <div>${message}</div>`,
+          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+          "</div>",
+        ].join("");
+
+        alertPlaceholder.append(wrapper);
+      };
+
+      const alertTrigger = document.getElementById("liveAlertBtn");
+      if (alertTrigger) {
+        alertTrigger.addEventListener("click", () => {
+          appendAlert("Nice, you triggered this alert message!", "success");
+        });
+      }
+    </script>
+    <script src="assets/script/script.js"></script>
+    <!-- End JavaScript File -->
+  </body>
+</html>
